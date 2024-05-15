@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
     private float chasePlayerAfterAttack = 1f;
 
     private float currentAttackTime;
-    private float defaultAttackTime;
+    private float defaultAttackTime = 1f;
 
     private bool followPlayer, attackPlayer;
 
@@ -37,12 +37,13 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FollowTarget();
         Attack();
     }
 
     void FixedUpdate()
     {
-        FollowTarget();
+        
     }
 
     void FollowTarget()
@@ -86,6 +87,8 @@ public class EnemyMovement : MonoBehaviour
         {
             attackPlayer = false;
             followPlayer = true;
+
+            Debug.Log("Following");
         }
 
     }

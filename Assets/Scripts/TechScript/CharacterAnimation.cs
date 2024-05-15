@@ -46,16 +46,19 @@ public class CharacterAnimation : MonoBehaviour
         if(attack == 0)
         {
             anim.SetTrigger(AnimationTags.ATTACK_1_TRIGGER);
+            Debug.Log("1");
         }
 
         if (attack == 1)
         {
             anim.SetTrigger(AnimationTags.ATTACK_2_TRIGGER);
+            Debug.Log("2");
         }
 
         if (attack == 2)
         {
             anim.SetTrigger(AnimationTags.ATTACK_3_TRIGGER);
+            Debug.Log("3");
         }
     }
 
