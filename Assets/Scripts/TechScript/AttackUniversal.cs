@@ -10,7 +10,7 @@ public class AttackUniversal : MonoBehaviour
 
     public bool isPlayer, isEnemy;
 
-    public GameObject hitFX;
+    public GameObject hitFXPrefabs;
 
     void Update()
     {
@@ -23,6 +23,32 @@ public class AttackUniversal : MonoBehaviour
 
         if (hit.Length > 0)
         {
+            if(isPlayer)
+            {
+                Vector3 hitFX_Pos = hit[0].transform.position;
+                hitFX_Pos.y += 1.3f;
+
+                if (hit[0].transform.forward.x > 0)
+                {
+                    hitFX_Pos.x += 0.3f;
+                }
+                else if (hit[0].transform.forward.x < 0) 
+                {
+                    hitFX_Pos.x -= 0.3f; 
+                }
+
+                Instantiate(hitFXPrefabs, hitFX_Pos, Quaternion.identity);
+
+                if(gameObject.CompareTag(Tags.LEFT_ARM_TAG) || gameObject.CompareTag(Tags.LEFT_LEG_TAG))
+                {
+                    hit[0].GetComponent<HealthScript>().ApplyDamage(damage, true);
+                }
+                else
+                {
+                    hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
+                }
+
+            }
             print("We hit the " + hit[0].gameObject.name);
             
             gameObject.SetActive(false);

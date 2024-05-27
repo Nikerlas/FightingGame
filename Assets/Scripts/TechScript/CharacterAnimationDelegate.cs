@@ -6,6 +6,29 @@ public class CharacterAnimationDelegate : MonoBehaviour
 {
     public GameObject leftArmAttackPoint, rightArmAttackPoint, leftLegAttackPoint, rightLegAttackPoint;
 
+    public float standUpTimer = 2f;
+
+    private CharacterAnimation animationScript;
+
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private AudioClip whooshSound, fallSound, groundHitSound, deadSound;
+
+    private EnemyMovement enemyMovement;
+
+    private void Awake()
+    {
+        animationScript = GetComponent<CharacterAnimation>();
+
+        audioSource = GetComponent<AudioSource>();
+
+        if(gameObject.CompareTag(Tags.ENEMY_TAG))
+        {
+            enemyMovement = GetComponentInParent<EnemyMovement>();
+        }
+    }
+
     void leftArmAttackOn()
     {
         leftArmAttackPoint.SetActive(true);
@@ -56,5 +79,62 @@ public class CharacterAnimationDelegate : MonoBehaviour
         {
             rightLegAttackPoint.SetActive(false);    
         }
+    }
+
+    void TagLeftArm()
+    {
+        leftArmAttackPoint.tag = Tags.LEFT_ARM_TAG;
+    }
+
+    void UnTagLeftArm()
+    {
+        leftArmAttackPoint.tag = Tags.UNTAGGED_TAG;
+    }
+
+    void TagLeftLeg()
+    {
+        leftLegAttackPoint.tag = Tags.LEFT_LEG_TAG;
+    }
+
+    void UnTagLeftLeg()
+    {
+        leftLegAttackPoint.tag = Tags.UNTAGGED_TAG;
+    }
+
+    void EnemyStandup()
+    {
+        StartCoroutine(StandUpAfterTime());
+    }
+
+    IEnumerator StandUpAfterTime()
+    {
+        yield return new WaitForSeconds(standUpTimer);
+        animationScript.StandUp();
+    }
+
+    public void AttackFXSound()
+    {
+        audioSource.volume = 0.2f;
+        audioSource.clip = whooshSound;
+        audioSource.Play();
+    }
+
+    public void CharacterDiedSound()
+    {
+        audioSource.volume = 1f;
+        audioSource.clip = deadSound;
+        audioSource.Play();
+    }
+
+    public void EnemyKnockDown()
+    {
+        audioSource.clip = fallSound;
+        audioSource.Play();
+    }
+
+    public void EnemyHitGround()
+    {
+        audioSource.clip = groundHitSound;
+        audioSource.Play();
     }
 }
