@@ -992,10 +992,10 @@ MonoBehaviour:
   leftLegAttackPoint: {fileID: 7595312099011103807}
   rightLegAttackPoint: {fileID: 1053572510593234188}
   standUpTimer: 2
-  whooshSound: []
-  fallSound: []
-  groundHitSound: []
-  deadSound: []
+  whooshSound: {fileID: 8300000, guid: 768375c363fce4148a9e7eb5e144f018, type: 3}
+  fallSound: {fileID: 8300000, guid: 0b8ed58b7ef752a4bb96f65df3f39374, type: 3}
+  groundHitSound: {fileID: 8300000, guid: ad20fa675c10c334aa781047bab21506, type: 3}
+  deadSound: {fileID: 8300000, guid: 9bc91374f2e26e44c9e67775072cdf19, type: 3}
 --- !u!82 &4036598042750961657
 AudioSource:
   m_ObjectHideFlags: 0

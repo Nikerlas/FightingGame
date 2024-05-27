@@ -906,6 +906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyChild
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f16882e817b88654f8781e89be14a9f1, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1092408308860062549, guid: f16882e817b88654f8781e89be14a9f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.000000011175869
@@ -1623,10 +1627,10 @@ MonoBehaviour:
   leftLegAttackPoint: {fileID: 0}
   rightLegAttackPoint: {fileID: 0}
   standUpTimer: 2
-  whooshSound: []
-  fallSound: []
-  groundHitSound: []
-  deadSound: []
+  whooshSound: {fileID: 8300000, guid: 768375c363fce4148a9e7eb5e144f018, type: 3}
+  fallSound: {fileID: 8300000, guid: 0b8ed58b7ef752a4bb96f65df3f39374, type: 3}
+  groundHitSound: {fileID: 8300000, guid: ad20fa675c10c334aa781047bab21506, type: 3}
+  deadSound: {fileID: 8300000, guid: 9bc91374f2e26e44c9e67775072cdf19, type: 3}
 --- !u!82 &2973860973872718828
 AudioSource:
   m_ObjectHideFlags: 0
