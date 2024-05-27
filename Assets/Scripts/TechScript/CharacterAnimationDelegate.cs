@@ -160,4 +160,15 @@ public class CharacterAnimationDelegate : MonoBehaviour
     {
         shakeCamera.ShouldShake = true;
     }
+
+    void CharacterDied()
+    {
+        Invoke("DeactivateGameObject", 2f);
+    }
+
+    void DeactivateGameObject()
+    {
+        EnemyManager.instance.SpawnEnemy();
+        gameObject.SetActive(false);
+    }
 }

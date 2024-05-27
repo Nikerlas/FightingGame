@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     private Transform playerTarget;
 
     public float attackDistance = 1f;
-    private float chasePlayerAfterAttack = 1f;
+    public float chasePlayerAfterAttack = 1f;
 
     private float currentAttackTime;
     private float defaultAttackTime = 1f;
