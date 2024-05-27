@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -327,6 +328,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 4, y: 180, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ea6783ff54a7343afa428749a8b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 0.2
+  duration: 0.2
+  slowDownAmount: 1
+  shouldShake: 0
+  initialDuration: 0
 --- !u!1001 &1288933891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -499,22 +517,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1218654228138390959, guid: e0eb73c13de15514c8e0b80dc2b90012, type: 3}
-      propertyPath: deadSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 9bc91374f2e26e44c9e67775072cdf19, type: 3}
-    - target: {fileID: 1218654228138390959, guid: e0eb73c13de15514c8e0b80dc2b90012, type: 3}
-      propertyPath: fallSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 0b8ed58b7ef752a4bb96f65df3f39374, type: 3}
-    - target: {fileID: 1218654228138390959, guid: e0eb73c13de15514c8e0b80dc2b90012, type: 3}
-      propertyPath: whooshSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 768375c363fce4148a9e7eb5e144f018, type: 3}
-    - target: {fileID: 1218654228138390959, guid: e0eb73c13de15514c8e0b80dc2b90012, type: 3}
-      propertyPath: groundHitSound
-      value: 
-      objectReference: {fileID: 8300000, guid: ad20fa675c10c334aa781047bab21506, type: 3}
     - target: {fileID: 1904978434038453113, guid: e0eb73c13de15514c8e0b80dc2b90012, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -612,22 +614,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6845856145139649557, guid: dbd6feb7bec98ca4f8c4fd36450f0fec, type: 3}
-      propertyPath: deadSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 9bc91374f2e26e44c9e67775072cdf19, type: 3}
-    - target: {fileID: 6845856145139649557, guid: dbd6feb7bec98ca4f8c4fd36450f0fec, type: 3}
-      propertyPath: fallSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 0b8ed58b7ef752a4bb96f65df3f39374, type: 3}
-    - target: {fileID: 6845856145139649557, guid: dbd6feb7bec98ca4f8c4fd36450f0fec, type: 3}
-      propertyPath: whooshSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 768375c363fce4148a9e7eb5e144f018, type: 3}
-    - target: {fileID: 6845856145139649557, guid: dbd6feb7bec98ca4f8c4fd36450f0fec, type: 3}
-      propertyPath: groundHitSound
-      value: 
-      objectReference: {fileID: 8300000, guid: ad20fa675c10c334aa781047bab21506, type: 3}
     - target: {fileID: 9064356673493504782, guid: dbd6feb7bec98ca4f8c4fd36450f0fec, type: 3}
       propertyPath: m_Name
       value: Player
